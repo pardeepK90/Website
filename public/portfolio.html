@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+    <style>
+        body
+        {
+            margin: 0;
+        }
+
+
+
+        .main_container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .header {
+            background-color: rgb(91, 23, 23);
+            height: 3em;
+            width: 100vw;
+           
+        }
+
+        .footer {
+            background-color: rgb(91, 23, 23);
+            height: 3em;
+            color: white;
+            text-align: center;
+            width: 100vw;
+        }
+
+        .footer>h2 {
+            padding: .4em 0;
+            margin: 0;
+        
+        }
+        .portfolio {
+            padding: 0 30px;
+            display: flex;
+            gap: 30px;
+            justify-content: space-between;
+            
+
+        }
+        .portfolio_container {
+            flex: 1 1 0;
+            max-width: 337px;
+        }
+       
+       
+        img {
+            border-radius: 15px;
+        }
+        .borders {
+            border: dotted black 6px;
+            padding: 10px;
+            border-radius: 15px;
+            max-width: 300px;
+        }
+        p {
+            font-size: 1.3rem;
+            font-weight: 600;
+            text-align: center;
+            font-family: "Reddit Sans Condensed", sans-serif;
+        }
+        .text1 {
+            margin-bottom: 0;
+        }
+        .text2 {
+            margin-top: 0;
+        }
+        
+        @media (max-width: 1250px) {
+            .portfolio {
+                flex-direction: column;
+                height: 100%;
+                padding: 30px 0;
+                align-items: center;
+            }
+        }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed:wght@200..900&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div class="main_container">
+        <section>
+            <div class="header"></div>
+        </section>
+
+        <section>
+            <div class="portfolio">
+                <div class="portfolio_container">
+                    <div class="borders">
+                        <a  href="https://pardeepk90.github.io/TinCat_Prj/"> <img class="links" src="./images/tincatimage.png" height="300" alt="tincat project"></a>
+                    </div>
+                    <div>
+                        <p>This is a website I made with the help of bootstrap. Click on the picture to view the site.</p>
+                    </div>
+                </div>
+
+                <div class="portfolio_container">
+                    <div class="borders">
+                        <a href="https://pardeepk90.github.io/Motivation-Meme-project/"> <img src="./images/motivation meme.png" height="300" width="300" alt="motivational quote image"></a>
+                    </div>
+                    <div>
+                        <p>This is a webpage where I occasionally post Motivation Quotes. </p>
+                    </div>
+                </div>
+
+                <div class="portfolio_container">
+                    <div class="borders">
+                        <a href=""> <img src="./images/Treasure island.png" height="300" alt="treasure island game"></a>
+                    </div>
+                    <div>
+                        <p class="text1">Treasure Island</p>
+                        <p class="text2">This is a game I made Using Python.</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="footer">
+                <h2>@ PARDEEP</h2>
+            </div>
+
+        </section>
+    </div>
+</body>
+
+</html>

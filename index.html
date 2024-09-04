@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/658c80a98b.js" crossorigin="anonymous"></script>
+    <style>
+       
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Reddit Sans Condensed", sans-serif;
+            font-weight: 400;
+            width: 100%;
+        }
+        .navbar {
+            background-color: rgb(78, 22, 22);
+            font-weight: 600;
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            padding: 0 2rem;
+            
+        }
+        .navbar .links {
+            display: flex;
+            gap: 1rem;
+            margin-left: 2rem;
+            
+
+        }
+
+        #name {
+            color: white;
+            
+        }
+
+
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .links li {
+            display: inline;
+        }
+
+        li a {
+            color: white;
+            padding: 5px 20px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            
+        }
+
+        
+
+        li a:hover {
+            color: orange;
+        }
+        .navbar > .toggle_btn {
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: none;
+
+        }
+        .action_button {
+            text-decoration: none;
+            background: orange;
+            padding: .5rem 1rem;
+            color: white;
+            border: none;
+            outline: none;
+            border-radius: 20px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .action_button:hover {
+            scale: 1.05;
+            color: white;
+        }
+        .dropdown_menu {
+            display: none;
+            position: absolute;
+            right: 2rem;
+            top: 65px;
+            width: 300px;
+            height: 0;
+            background-color: inherit;
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
+            overflow: hidden;
+            list-style-type: none;
+            transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+           
+        }
+        .dropdown_menu.open {
+            height: 240px; 
+        }
+        .dropdown_menu li {
+            padding: .7rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .dropdown_menu .action_button {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+
+
+
+        h2 {
+            font-family: "DM Serif Display", serif;
+            font-size: 3rem;
+            color: rgb(7, 208, 219);
+            font-weight: 400;
+            margin: 0;
+            text-align: center;
+
+        }
+
+        .about_container {
+            display: flex;
+            justify-content: center;
+            margin: 70px 0;
+            padding: 50px;
+            background-color: #a882c0;
+        }
+
+        .about_container>img {
+            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            margin-top: 60px;
+
+        }
+
+        .introduction {
+            width: 40%;
+            margin-left: 6em;
+        }
+
+        .introduction>p {
+            margin: 5px 0;
+            font-size: 1.5rem;
+    
+        }
+        #skills {
+            margin: 3em 0;
+                }
+        .second_h2 {
+            margin-bottom: 1.5em;
+        }
+        .icons {
+            display: flex;
+            justify-content: space-around;
+            
+        }
+        #html {
+            box-shadow: red 5px 5px 10px 5px;
+        }
+        #css {
+            box-shadow: blue 5px 5px 10px 5px;
+        }
+        #js {
+            text-shadow: 0px 0px 15px #9d14f2;
+        }
+        #contact {
+            text-align: center;
+            margin-top: 4em;
+            background-color: #a882c0;
+            padding: 1em 0;
+            padding-bottom: 1.5em;
+
+        }
+        #contact > p {
+            margin-top: 0;
+            font-size: 1.5rem;
+        
+        }
+        input {
+            width: 35%;
+            height: 20px;
+            margin-bottom: 4px;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        textarea {
+            width: 35%;
+            height: 4em;
+            border-radius: 6px;
+            box-shadow: black -1px -1px;
+            font-family: inherit;
+            font-size: 1rem;
+        }
+        button {
+            border-radius: 5px;
+            background-color: rgb(247, 172, 59);
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            font-size: 1rem;
+            
+        }
+        #footer {
+            background-color: rgb(78, 22, 22);
+            height: 4em;
+            
+        }
+        
+        footer > p {
+            margin: 0;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+            position: relative;
+            top: 15px;
+            
+
+        }
+        footer > p > a{
+            list-style-type: none;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+
+        
+
+
+
+
+
+
+
+        @media (max-width: 830px) {
+            .navbar .links,
+            .navbar .action_button{
+                display: none;
+            }
+            .navbar .toggle_btn {
+                display: block;
+            }
+            .dropdown_menu {
+                display: block;
+                left: 2rem;
+                width: unset;
+                background-color: rgb(78, 22, 22);
+            }
+
+
+
+
+            .about_container {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 20px;
+                margin-top: 0px;
+            }
+            .about_container.open {
+                margin-top: 270px;
+            }
+
+            .about_container>img {
+                border-radius: 50%;
+                width: 150px;
+                height: 150px;
+                margin-bottom: 20px;
+                margin-top: 20px;
+            }
+            .introduction {
+                margin-right: 6em;
+                width: 90%;
+            }
+
+            .intro {
+                line-height: 1.25;
+                padding: 0 10px;
+                margin: 0 auto;
+            
+            }
+            h2 {
+                font-size: 2rem;
+            }
+            .introduction>p {
+                font-size: 1.25rem;
+            }
+            input {
+                width: 60%;
+            }
+            textarea {
+                width: 60%;
+            }
+        }
+
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Reddit+Sans+Condensed&family=Hedvig+Letters+Serif&family=DM+Serif+Display&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <section id="header" class="background">
+        <div class="name_container">
+            <div class="navbar">
+                <div id="name">
+                    <p>PARDEEP</p>
+                </div>
+                <ul class="links">
+                    <li><a href="#header">About</a></li>
+                    <li><a href="./public/portfolio.html">Portfolio</a></li>
+                    <li><a href="https://pardeepk90.github.io/My-Resume/">Resume</a></li>
+                </ul>
+                <a class="action_button" href="#contact">Contact Me</a>
+                <div class="toggle_btn">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="dropdown_menu">
+            <li><a href="#header">About</a></li>
+            <li><a href="./public/portfolio.html">Portfolio</a></li>
+            <li><a href="">Resume</a></li>
+            <li><a class="action_button" href="#contact">Contact Me</a></li>
+        </div>
+    
+        <div class="about_container" id="about">
+            <img src="./images/image.jpeg" alt="">
+            <div class="introduction">
+                <h2>Hello</h2>
+                <p class="intro">I'm PARDEEP, a Programmer/Web Developer. I have a physics background. My newfound passion
+                    for AI and machine learning kickstarted my journey into programming. I began by diving into web
+                    development, and I’m excited to explore other areas of programming as well.</p>
+            </div>
+        </div>
+    
+    </section>
+
+    <section id="skills">
+        <div>
+            <h2 class="second_h2">Skills</h2>
+            <div class="icons">
+                <i id="html" class="fa-brands fa-html5 fa-beat fa-6x" style="color: red;"></i>
+                <i id="css" class="fa-brands fa-css3-alt fa-beat fa-6x" style="color: blue;"></i>
+                <i id="js" class="fa-brands fa-js fa-flip fa-6x" style="color: #FFD43B;"></i>
+            </div>    
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>I'd really like to hear from you!</p>
+        <form action="#">
+            <input type="text" name="name" placeholder="Your Name" autocomplete="on" required><br>
+            <input type="email" name="email" placeholder="Your Email" autocomplete="on" required><br>
+            <textarea name="message" placeholder="Send me your thoughts" autocomplete="on" required cols="30" rows="10"></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <section id="footer">
+        <footer>
+            <p>&lt;&lt;&lt; &copy; <a href="#header">Pardeep Kumar</a> &gt;&gt;&gt;</p>
+
+        </footer>
+    </section>
+    <script>
+        const toggleBtn = document.querySelector('.toggle_btn')
+        const toggleBtnIcon = document.querySelector('.toggle_btn i')
+        const dropDownMenu = document.querySelector('.dropdown_menu')
+
+        toggleBtn.onclick = function () {
+            dropDownMenu.classList.toggle('open')
+            document.querySelector(".about_container").classList.toggle("open")
+        }
+    </script>
+
+</body>
+
+</html>
